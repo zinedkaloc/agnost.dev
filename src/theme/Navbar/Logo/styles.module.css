@@ -1,0 +1,18 @@
+.brand {
+  display: block;
+  height: 36px;
+  width: 80px;
+  min-width: 119px;
+  margin-right: var(--ifm-navbar-item-padding-horizontal);
+  border: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  white-space: nowrap;
+  background-image: url('/img/logo_dark.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+:global(html[data-theme='light']) .brand {
+  background-image: url('/img/logo.svg');
+}

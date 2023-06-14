@@ -1,0 +1,38 @@
+const consts = require("./consts")
+
+module.exports = {
+  artifactHubUrl: "https://artifacthub.io/packages/helm/altogic/altogic",
+
+  crunchbaseUrl: "https://www.crunchbase.com/organization/altogic",
+  demoUrl: `https://designer.altogic.com/auth/signup`,
+  description:
+    "Powerful backend as a service platform helping you to easily build, deploy and manage scalable backend apps.",
+  dockerUrl: "https://hub.docker.com/r/altogic/altogic",
+  domain: consts.domain,
+  githubOrgUrl: consts.githubOrgUrl,
+  githubUrl: consts.githubOrgUrl,
+  serverlessUrl: "https://www.altogic.com/docs/full-code-functions",
+  helmVersion: "0.11.0",
+  linkedInUrl: "https://www.linkedin.com/company/altogic/",
+  oneLiner: "Altogic | Build backend apps faster. ",
+  slackUrl: `https://slack.${consts.domain}`,
+  stackoverflowUrl: "https://stackoverflow.com/questions/tagged/altogic",
+  twitterUrl: "https://twitter.com/altogic",
+  videosUrl: "https://youtu.be/bMfF9Yeg2lI",
+  apiRef: "https://clientapi.altogic.com/v1.3.0/modules.html",
+  discordUrl: "https://discord.gg/ERK2ssumh8",
+  circleUrl: "https://community.altogic.com",
+  deployLink: process.env.DEPLOY_LINK,
+  productHuntUrl: "https://www.producthunt.com/posts/altogic",
+  repoUrl: "https://github.com/altogic",
+
+  // Agnost fields
+
+  productionUrl: "https://www.agnost.dev",
+  tagLine:
+    "Your kubernetes based cloud native application platform. Agnost is a platform that helps you to deploy your applications on kubernetes with ease.",
+  title: "Agnost - Open-source Kubernetes Development Platform",
+  organizationName: "agnost",
+  projectName: "agnost",
+  copyright: `Copyright © ${new Date().getFullYear()} Altogic, Inc. | All rights reserved`,
+}
