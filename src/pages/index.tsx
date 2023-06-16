@@ -36,25 +36,16 @@ const Hero = () => {
               caCss["card__side--illustration"],
             )}
           >
-            {/*  <ImageSwitcher
-              alt="User model design in Altogic"
-              lightImageSrc="../img/pages/model-design-light.png?text=Designer light mode"
-              darkImageSrc="../img/pages/model-design-dark.png?text=Designer dark mode"
-              className={ilCss.illustration__main}
-              width={855}
-            /> */}
             <video
               autoPlay
               loop
               muted
               playsInline
               src="../img/pages/index/hero.webm"
-              /* poster="/hero.gif" */
               width="100%"
               height="100%"
             >
               <source src="/hero.webm" type="video/webm" />
-              {/* <source src="/hero.gif" type="image/gif" /> */}
               <source src="/hero.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>

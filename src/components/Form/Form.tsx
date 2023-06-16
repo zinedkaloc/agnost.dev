@@ -64,12 +64,8 @@ const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={coCss.contact__form__form__block}>
           <InputText id="email" isRequired register={register} />
-          <button
-            className={coCss.contact__form__submit__button}
-            type="submit"
-            disabled={!formState.isValid}
-          >
-            Send
+          <button className={coCss.contact__form__submit__button} type="submit">
+            Get Notified
           </button>
         </div>
 

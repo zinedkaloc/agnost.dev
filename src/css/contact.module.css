@@ -108,12 +108,12 @@
   font: inherit;
   font-size: 1.25rem;
   color: inherit;
-  background-color: var(--palette-sky);
-  color: white;
-  border: none;
+  background-color: var(--palette-darky);
+  color: var(--palette-text);
+  border: rgb(226, 232, 240);
   cursor: pointer;
   padding: 0.75rem 2rem;
-  width: 100%;
+  width: fit-content;
   height: 100%;
   align-self: flex-start;
   justify-self: flex-end;
@@ -158,7 +158,6 @@ input[type="text"] {
   width: 100%;
   max-width: 100%;
   height: 48px;
-  border: 0;
 
   padding: 7px 11px;
   background-color: var(--theme-section-odd-bg-color);
@@ -170,6 +169,9 @@ input[type="text"] {
 
 :global(html[data-theme="dark"]) .contact__form__input {
   color: var(--palette-white);
+}
+:global(html[data-theme="dark"]) .contact__form__input {
+  border-bottom: 1px solid rgb(29, 40, 58);
 }
 
 :global(html[data-theme="dark"]) input[type="text"] {
@@ -218,4 +220,23 @@ input[type="checkbox"] {
   cursor: pointer;
   min-height: 24px;
   min-width: 24px;
+}
+
+@media (max-width: 996px) {
+  .contact__form__submit__button {
+    padding: 0 1rem;
+    font: inherit;
+    color: inherit;
+    background-color: var(--palette-darky);
+    color: var(--palette-text);
+    border: rgb(226, 232, 240);
+    cursor: pointer;
+    padding: 0.75rem 2rem;
+    width: fit-content;
+    align-self: flex-start;
+    justify-self: flex-end;
+    border-radius: calc(var(--ifm-global-border-radius) / 2);
+    font-weight: var(--ifm-font-weight-bold);
+    font-size: 12px;
+  }
 }

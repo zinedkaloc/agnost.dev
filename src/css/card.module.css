@@ -103,13 +103,13 @@
 
   .card {
     margin-bottom: 2rem;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     /* margin: 1rem; */
   }
 
   .card--reverse {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .card__side {
@@ -133,5 +133,18 @@
 
   .card__cta {
     align-self: stretch;
+  }
+  .card__title--important {
+    font-size: var(--font-size-big-4);
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .card__content {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: var(--palette-pale-blue);
+    text-align: center;
   }
 }

@@ -11,7 +11,7 @@ const InputText = ({ id, isRequired, register }: InputTextProps) => {
   return (
     <div className={coCss.contact__form__form__block}>
       <input
-        style={{ width: "240px" }}
+        style={{ width: "200px" }}
         className={coCss.contact__form__input}
         type="text"
         placeholder="hello@developer.com"

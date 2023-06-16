@@ -6,8 +6,12 @@
 
 /* You can override the default Infima variables here. */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
 :root {
+  --ifm-font-family-base: Inter, "Inter";
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-background-color: #030711;
   --ifm-code-font-size: 95%;
   --ifm-color-primary: #1976d2;
   --ifm-color-primary-dark: #29784c;
@@ -17,7 +21,7 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --palette-charade: #21222c;
+  --palette-charade: #030711;
   /* Alternative background color to fill with 13243a */
   --palette-charade-ex: #52556b;
   --palette-gray: #32343e;
@@ -28,9 +32,11 @@
   --palette-pink-bak: #1976d2;
   --palette-red: #d50000;
   --palette-pink-darker: #1976d2;
-  --palette-rock: rgb(var(--palette-rock-raw));
-  --palette-rock-raw: 38, 40, 51;
+  --palette-rock: var(--palette-rock-raw);
+  --palette-rock-raw: #030711;
   --palette-sky: #1976d2;
+  --palette-darky: #0f172a;
+  --palette-text: #fff;
   --palette-turquoise: #1976d2;
   --palette-black-10: rgba(0, 0, 0, 0.1);
   --palette-white: #fff;
@@ -79,18 +85,21 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-background-color: var(--palette-charade);
+  --ifm-navbar-background-color: #030711;
+  --ifm-background-color: #030711 !important;
   --ifm-color-emphasis-300: var(--palette-pale-blue);
   --ifm-menu-link-sublist-icon: url("/img/infima/arrow.svg");
   --palette-pink: #00a9f9;
   --palette-pink-bak: #1976d2;
-  --palette-rock: rgb(var(--palette-rock-raw));
-  --palette-rock-raw: 38, 40, 51;
+  --palette-rock: #030711;
+  --palette-rock-raw: #030711;
   --palette-red: #d50000;
   --palette-pink-darker: #488acb;
-  --palette-rock: rgb(var(--palette-rock-raw));
-  --palette-rock-raw: 38, 40, 51;
+  --palette-rock: var(--palette-rock-raw);
+  --palette-rock-raw: #030711;
   --palette-sky: #00a9f9;
+  --palette-darky: #f8fafc;
+  --palette-text: #000;
   --palette-turquoise: #00a9f9;
   --ifm-color-primary: #00a9f9;
   --ifm-color-primary-dark: #00a9f9;
@@ -103,7 +112,7 @@
 }
 [data-theme="light"] {
   --palette-pale-blue: #64748b;
-  --palette-rock: #262833;
+  --palette-rock: #030711;
   --palette-gray: #4b4e5d;
   --theme-section-odd-bg-color: #f8fafc;
 

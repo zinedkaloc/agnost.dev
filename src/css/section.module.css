@@ -32,6 +32,12 @@
   justify-content: center; /* Horizontally center the content */
 }
 
+@media (min-width: 1440px) {
+  .section--inner {
+    max-width: calc(var(--ifm-container-width) + 144px);
+  }
+}
+
 .section--blog {
   --ifm-code-padding-horizontal: 1.5rem;
   --ifm-code-padding-vertical: 1rem;
