@@ -28,7 +28,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "tr", "de"],
+    locales: ["en"],
   },
   plugins: [
     require.resolve("./plugins/fetch-latest-release/index"),
@@ -77,10 +77,10 @@ const config = {
       image: "img/docusaurus-social-card.jpg",
 
       navbar: {
-        title: "Agnost",
         logo: {
           alt: "Agnost - Open Source Kubernetes Development Platform",
           src: "img/logo.svg",
+          srcDark: "img/logo_dark.svg",
         },
         items: [
           {
