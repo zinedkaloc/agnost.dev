@@ -1,7 +1,6 @@
 .brand {
   display: block;
   height: 36px;
-  min-width: 119px;
   margin-right: var(--ifm-navbar-item-padding-horizontal);
   border: 0;
   overflow: hidden;
