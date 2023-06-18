@@ -35,33 +35,6 @@ const config = {
     require.resolve("./plugins/optimize/index"),
     require.resolve("./plugins/manifest/index"),
     /* require.resolve("./plugins/webpack-ts/index"), */
-    [
-      "@docusaurus/plugin-pwa",
-      {
-        pwaHead: [
-          {
-            tagName: "link",
-            rel: "manifest",
-            href: "/manifest.webmanifest",
-          },
-          {
-            tagName: "meta",
-            name: "theme-color",
-            content: "#1976d2",
-          },
-          {
-            tagName: "meta",
-            name: "apple-mobile-web-app-capable",
-            content: "yes",
-          },
-          {
-            tagName: "meta",
-            name: "apple-mobile-web-app-status-bar-style",
-            content: "#21222c",
-          },
-        ],
-      },
-    ],
   ],
 
   presets: [
