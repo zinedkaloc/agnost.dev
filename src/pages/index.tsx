@@ -76,7 +76,6 @@ const Hero = () => {
                   src="../img/pages/index/hero.vtt"
                   label="English Captions"
                   srcLang="en"
-                  default
                 ></track>
               </video>
             </div>
