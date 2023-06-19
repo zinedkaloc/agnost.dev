@@ -3,6 +3,7 @@ import clsx from "clsx"
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Layout from "@theme/Layout"
+import { motion } from "framer-motion"
 
 import caCss from "../css/card.module.css"
 import seCss from "../css/section.module.css"
@@ -14,45 +15,68 @@ import Form from "../components/Form/Form"
 
 const Hero = () => {
   return (
-    <section className={clsx(seCss.section)}>
-      <div className={clsx(seCss["section--inner"], seCss["section--center"])}>
-        <div className={caCss.card}>
-          <div className={caCss.card__side}>
-            <h1 className={caCss["card__title--important"]}>
-              Open-source Kubernetes Development Platform
-            </h1>
-            <p className={caCss.card__content}>
-              Powerful and Scalable Application Development Environment running
-              in a Kubernetes Clusters. Efficiently build robust Node.js Express
-              applications.
-            </p>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <section className={clsx(seCss.section)}>
+        <div
+          className={clsx(seCss["section--inner"], seCss["section--center"])}
+        >
+          <div className={caCss.card}>
+            <div className={caCss.card__side}>
+              <motion.h1
+                className={caCss["card__title--important"]}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Open-source Kubernetes Development Platform
+              </motion.h1>
+              <motion.p
+                className={caCss.card__content}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                Powerful and Scalable Application Development Environment
+                running in a Kubernetes Clusters. Efficiently build robust
+                Node.js Express applications.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+              >
+                <Form />
+              </motion.div>
+            </div>
 
-            <Form />
-          </div>
-
-          <div
-            className={clsx(
-              caCss.card__side,
-              caCss["card__side--illustration"],
-            )}
-          >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="../img/pages/index/hero.webm"
-              width="100%"
-              height="100%"
+            <div
+              className={clsx(
+                caCss.card__side,
+                caCss["card__side--illustration"],
+              )}
             >
-              <source src="/hero.webm" type="video/webm" />
-              <source src="/hero.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                src="../img/pages/index/hero.webm"
+                width="100%"
+                height="100%"
+              >
+                <source src="/hero.webm" type="video/webm" />
+                <source src="/hero.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </motion.div>
   )
 }
 
