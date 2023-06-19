@@ -105,7 +105,7 @@ const Footer = () => {
             <ul className={footerStyles.footer__socials}>
               <li>
                 <a
-                  href="https://community.altogic.com"
+                  href="https://github.com/orgs/cloud-agnost/discussions"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -146,8 +146,8 @@ const Footer = () => {
       </div>
       <div className={footerStyles.footer__bottom}>
         <p className={footerStyles.footer__copyright}>
-          Copyright © ${new Date().getFullYear()} Agnost, Inc. | All rights
-          reserved,
+          Copyright © {new Date().getFullYear()} Agnost, Inc. | All rights
+          reserved
         </p>
       </div>
     </footer>
