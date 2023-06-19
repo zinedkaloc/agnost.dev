@@ -579,8 +579,9 @@ const DevelopmentEnvironment = () => {
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
+  const title = "Agnost | Open-source Kubernetes Development Platform"
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+    <Layout title={title} description={siteConfig.tagline} replaceTitle>
       {/* <HomepageHeader /> */}
       <Hero />
       <AllInOneBackend />

@@ -147,5 +147,7 @@ const config = {
       },
     }),
 }
-
-module.exports = config
+module.exports = {
+  ...config,
+  ssrTemplate: ssrTemplate(config),
+}
