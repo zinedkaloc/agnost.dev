@@ -22,11 +22,11 @@
 }
 
 .topfeatures:hover {
-  border-color: var(--palette-sky);
-  /*   box-shadow: 0 5px 2px 0 #1976d2e6;
-  transform: translateY(-5px) !important; */
+  /* border-color: var(--palette-sky);
+     box-shadow: 0 5px 2px 0 #1976d2e6;
+  transform: translateY(-5px) !important;
   cursor: pointer;
-  transition-duration: 100ms;
+  transition-duration: 100ms; */
 }
 
 .topfeatures__a {
@@ -34,10 +34,10 @@
 }
 
 .topfeatures__a:hover {
-  border-color: var(--palette-sky);
+  /*   border-color: var(--palette-sky);
   text-decoration: none;
   cursor: pointer;
-  color: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-base); */
 }
 
 .feature__header {
