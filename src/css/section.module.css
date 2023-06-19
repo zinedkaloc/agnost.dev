@@ -57,7 +57,7 @@
   display: flex;
   max-width: var(--ifm-container-width);
   width: 100%;
-  padding: 4.5rem 1rem 0rem 1rem;
+  padding: 3rem 1rem 3rem 1rem;
   margin: 0 auto;
 }
 
@@ -310,7 +310,10 @@
   }
 
   .section__subtitle--jumbotron {
-    font-size: var(--font-size-big-1);
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: var(--palette-pale-blue);
+    text-align: center;
   }
 
   .section__illustration {

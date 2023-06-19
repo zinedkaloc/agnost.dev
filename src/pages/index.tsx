@@ -82,7 +82,9 @@ const AllInOneBackend = () => {
               seCss["section__subtitle--narrow"],
               "text--center",
             )}
-            style={{ marginTop: "1rem" }}
+            style={{
+              marginTop: "1rem",
+            }}
           >
             Application server, database, authentication, queues, cache,
             cronjobs, realtime — it's all here. Agnost gives developers the
@@ -286,35 +288,38 @@ const AllInOneBackend = () => {
 
 const Realtime = () => {
   return (
-    <section className={clsx(seCss["section--slim--accent"])}>
-      <div className={juCss.jumbotron}>
-        <h1
-          className={clsx(
-            seCss.section__title,
-            caCss["card__title--important"],
-            seCss["section__title--jumbotron"],
-            seCss["section__title--accent"],
-            "text--center",
-          )}
-        >
-          Realtime Application Development
-        </h1>
+    <section className={clsx(seCss.section)}>
+      <div className={clsx(seCss["section--help"], seCss["section--center"])}>
+        <div className={juCss.jumbotron}>
+          <h1
+            className={clsx(
+              seCss.section__title,
+              caCss["card__title--important"],
+              seCss["section__title--jumbotron"],
+              seCss["section__title--accent"],
+              "text--center",
+            )}
+          >
+            Realtime Application Development
+          </h1>
 
-        <p
-          className={clsx(
-            seCss.section__subtitle,
-            seCss["section__subtitle--jumbotron"],
-            seCss["section__subtitle--accent"],
-            "text--center",
-          )}
-          style={{ marginTop: "1rem" }}
-        >
-          Near-realtime app development platform for Express routes and
-          middlewares. Whatever changes you made in your code deployed to your
-          application servers in seconds. Export your application in a
-          standardized format and import it at any other Agnost Kubernetes
-          cluster.
-        </p>
+          <p
+            className={clsx(
+              seCss.section__subtitle,
+              seCss["section__subtitle--jumbotron"],
+              seCss["section__subtitle--accent"],
+              seCss["section__subtitle--narrow"],
+              "text--center",
+            )}
+            style={{ marginTop: "1rem" }}
+          >
+            Near-realtime app development platform for Express routes and
+            middlewares. Whatever changes you made in your code deployed to your
+            application servers in seconds. Export your application in a
+            standardized format and import it at any other Agnost Kubernetes
+            cluster.
+          </p>
+        </div>
       </div>
     </section>
   )
