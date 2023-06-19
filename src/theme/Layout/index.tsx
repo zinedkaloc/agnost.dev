@@ -1,126 +1,57 @@
+import React from "react"
 import clsx from "clsx"
-import React, { ReactNode } from "react"
-import Head from "@docusaurus/Head"
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
-import useBaseUrl from "@docusaurus/useBaseUrl"
-
+import ErrorBoundary from "@docusaurus/ErrorBoundary"
+import {
+  PageMetadata,
+  SkipToContentFallbackId,
+  ThemeClassNames,
+} from "@docusaurus/theme-common"
+import { useKeyboardNavigation } from "@docusaurus/theme-common/internal"
+import SkipToContent from "@theme/SkipToContent"
 import AnnouncementBar from "@theme/AnnouncementBar"
-import Footer from "@theme/Footer"
-import LayoutProviders from "@theme/Layout/Provider"
 import Navbar from "@theme/Navbar"
-import { MetadataContextProvider } from "@theme/useMetadataContext"
+import Footer from "@theme/Footer"
+import LayoutProvider from "@theme/Layout/Provider"
+import ErrorPageContent from "@theme/ErrorPageContent"
+import type { Props } from "@theme/Layout"
 import styles from "./styles.module.css"
 
-export type Props = {
-  altFooter: boolean
-  canonical?: string
-  flex: boolean
-  replaceTitle?: boolean
-  children: ReactNode
-  title?: string
-  noFooter?: boolean
-  description?: string
-  image?: string
-  keywords?: string | string[]
-  permalink?: string
-  wrapperClassName?: string
-  pageClassName?: string
-  searchMetadatas?: {
-    version?: string
-    tag?: string
-  }
-}
-
-const Layout = ({
-  altFooter,
-  canonical,
-  children,
-  description,
-  flex,
-  image,
-  keywords,
-  noFooter,
-  permalink,
-  title,
-  replaceTitle = false,
-  wrapperClassName,
-}: Props) => {
-  const { siteConfig } = useDocusaurusContext()
+export default function Layout(props: Props): JSX.Element {
   const {
-    title: siteTitle,
-    themeConfig: { image: defaultImage },
-    url: siteUrl,
-  } = siteConfig
+    children,
+    noFooter,
+    wrapperClassName,
+    // Not really layout-related, but kept for convenience/retro-compatibility
+    title,
+    description,
+  } = props
 
-  const metaTitle = replaceTitle
-    ? title
-    : title != null
-    ? `${title} | ${siteTitle}`
-    : siteTitle
+  useKeyboardNavigation()
 
-  const metaImage = image ?? defaultImage
-  const metaImageUrl = useBaseUrl(metaImage, { absolute: true })
-  const isBlogPost =
-    description?.match(/^Blog/g) == null && wrapperClassName === "blog-wrapper"
   return (
-    <MetadataContextProvider value={{ altFooter, isBlogPost }}>
-      <LayoutProviders>
-        <Head>
-          <title>{metaTitle}</title>
-          {/* TODO:  Canonical URL path */}
-          {permalink != null && (
-            <link rel="canonical" href={`${siteUrl}${permalink}`} />
-          )}
-          {permalink == null && canonical != null && (
-            <link rel="canonical" href={`${siteUrl}${canonical}`} />
-          )}
-          <meta property="og:image" content={metaImageUrl} />
-          {permalink != null && (
-            <meta property="og:url" content={`${siteUrl}${permalink}`} />
-          )}
-          {permalink == null && canonical != null && (
-            <meta property="og:url" content={`${siteUrl}${canonical}`} />
-          )}
-          <meta property="og:title" content={metaTitle} />
-          <meta name="twitter:image" content={metaImageUrl} />
-          {description != null && (
-            <meta name="description" content={description} />
-          )}
-          {description != null && (
-            <meta name="twitter:description" content={description} />
-          )}
-          {description != null && (
-            <meta property="og:description" content={description} />
-          )}
-          <meta name="twitter:title" content={metaTitle} />
-          <meta
-            name="twitter:image:alt"
-            content={`Image for ${String(metaTitle)}`}
-          />
-          {keywords != null && keywords.length > 0 && (
-            <meta
-              name="keywords"
-              content={
-                keywords instanceof Array ? keywords.join(",") : keywords
-              }
-            />
-          )}
-        </Head>
-        <AnnouncementBar />
-        <Navbar />
-        <div
-          className={clsx(styles.wrapper, wrapperClassName, {
-            [styles.flex]: flex,
-          })}
-        >
+    <LayoutProvider>
+      <PageMetadata title={title} description={description} />
+
+      <SkipToContent />
+
+      <AnnouncementBar />
+
+      <Navbar />
+
+      <div
+        id={SkipToContentFallbackId}
+        className={clsx(
+          ThemeClassNames.wrapper.main,
+          styles.mainWrapper,
+          wrapperClassName,
+        )}
+      >
+        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
           {children}
-        </div>
-        {noFooter !== true && <Footer />}
-      </LayoutProviders>
-    </MetadataContextProvider>
+        </ErrorBoundary>
+      </div>
+
+      {!noFooter && <Footer />}
+    </LayoutProvider>
   )
 }
-
-Layout.defaultProps = { altFooter: false, flex: false }
-
-export default Layout

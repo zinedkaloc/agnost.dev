@@ -16,6 +16,8 @@ image: /img/blog/2023-06-19/banner.png
 tags: [kubernetes, orchestration, docker]
 ---
 
+# Exploring Kubernetes Architecture
+
 Have you ever wondered what powers the most sophisticated and efficient
 cloud-native applications today? Enter Kubernetes, the silent force behind the
 success stories of many tech giants. This powerful orchestrator breathes life
