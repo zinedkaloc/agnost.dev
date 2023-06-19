@@ -92,6 +92,7 @@ const Footer = () => {
             alt="Altogic Footer logo"
             className={footerStyles.footer__logo}
             height={30}
+            width={120}
             src="/img/logo_dark.svg"
             title="Altogic | Build backend apps faster"
           />
@@ -101,7 +102,7 @@ const Footer = () => {
             scale.
           </p>
           <div className="widget">
-            <h3 className={footerStyles.footer__socialsheader}>Connect</h3>
+            <h5 className={footerStyles.footer__socialsheader}>Connect</h5>
             <ul className={footerStyles.footer__socials}>
               <li>
                 <a

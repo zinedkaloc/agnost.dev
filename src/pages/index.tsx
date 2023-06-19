@@ -71,6 +71,13 @@ const Hero = () => {
                 <source src="/hero.webm" type="video/webm" />
                 <source src="/hero.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
+                <track
+                  kind="captions"
+                  src="../img/pages/index/hero.vtt"
+                  label="English Captions"
+                  srcLang="en"
+                  default
+                ></track>
               </video>
             </div>
           </div>
@@ -442,7 +449,7 @@ const DevelopmentEnvironment = () => {
                 d="M230.993 120.964c-27.888 20.599-68.408 31.534-103.247 31.534c-48.827 0-92.821-18.056-126.05-48.064c-2.628-2.373-.255-5.594 2.881-3.73c35.942 20.854 80.276 33.484 126.136 33.484c30.94 0 64.932-6.442 96.212-19.666c4.662-2.12 8.646 3.052 4.068 6.442Zm11.614-13.224c-3.56-4.577-23.566-2.204-32.636-1.102c-2.713.34-3.137-2.034-.678-3.814c15.936-11.19 42.13-7.968 45.181-4.239c3.052 3.815-.848 30.008-15.767 42.554c-2.288 1.95-4.492.933-3.475-1.61c3.39-8.393 10.935-27.296 7.375-31.789Z"
               />
             </svg>
-            <h3 className={feCss.help__header}>Amazon Web Services</h3>
+            <h4 className={feCss.help__header}>Amazon Web Services</h4>
             <p className={feCss.feature__content}>
               Deploy your apps to AWS EKS
             </p>
@@ -452,7 +459,7 @@ const DevelopmentEnvironment = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
-              height="36"
+              height="44"
               viewBox="0 0 128 128"
               className="h-10 w-10 fill-current"
             >
@@ -514,7 +521,7 @@ const DevelopmentEnvironment = () => {
                 transform="translate(.587 4.468) scale(.91904)"
               />
             </svg>
-            <h3 className={feCss.help__header}>Microsoft Azure</h3>
+            <h4 className={feCss.help__header}>Microsoft Azure</h4>
             <p className={feCss.feature__content}>
               Deploy your apps to Azure AKS
             </p>
@@ -548,7 +555,7 @@ const DevelopmentEnvironment = () => {
                 />
               </g>
             </svg>
-            <h3 className={feCss.help__header}>Google Cloud Platform</h3>
+            <h4 className={feCss.help__header}>Google Cloud Platform</h4>
             <p className={feCss.feature__content}>
               Deploy your apps to GCP GKE
             </p>
@@ -566,7 +573,7 @@ const DevelopmentEnvironment = () => {
                 d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"
               />
             </svg>
-            <h3 className={feCss.help__header}>On-Premise</h3>
+            <h4 className={feCss.help__header}>On-Premise</h4>
             <p className={feCss.feature__content}>
               Deploy your apps to your own Kubernetes clusters
             </p>

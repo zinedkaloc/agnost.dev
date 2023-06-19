@@ -27,6 +27,7 @@ function LogoThemedImage({
       width={logo.width}
       alt={alt}
       style={logo.style}
+
     />
   );
 
@@ -68,6 +69,7 @@ export default function Logo(props: Props): JSX.Element {
           logo={logo}
           alt={alt}
           imageClassName={imageClassName}
+
         />
       )}
       {navbarTitle != null && <b className={titleClassName}>{navbarTitle}</b>}

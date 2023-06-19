@@ -81,6 +81,8 @@ const config = {
           alt: "Agnost - Open Source Kubernetes Development Platform",
           src: "img/logo.svg",
           srcDark: "img/logo_dark.svg",
+          width: 120,
+          height: 50,
         },
         items: [
           {
