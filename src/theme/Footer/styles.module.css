@@ -175,6 +175,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    justify-items: last baseline;
+    /* justify-items: last baseline; */
   }
 }
