@@ -47,7 +47,7 @@ const config = {
           {
             tagName: "meta",
             name: "theme-color",
-            content: "#1976d2",
+            content: "#030711",
           },
           {
             tagName: "meta",
@@ -57,7 +57,7 @@ const config = {
           {
             tagName: "meta",
             name: "apple-mobile-web-app-status-bar-style",
-            content: "#21222c",
+            content: "#030711",
           },
         ],
       },
@@ -168,7 +168,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Agnost, Inc. Built with ❤️.`,
       },
       prism: {
         theme: lightCodeTheme,
