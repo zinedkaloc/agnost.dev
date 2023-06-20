@@ -86,6 +86,7 @@ const Hero = () => {
     </motion.div>
   )
 }
+import BrowserOnly from "@docusaurus/BrowserOnly"
 
 const AllInOneBackend = () => {
   const controls = useAnimation()
@@ -95,6 +96,7 @@ const AllInOneBackend = () => {
   })
 
   function getThreshold() {
+    if (typeof window === "undefined") return 0.2
     return window.innerWidth < 768 ? 0.1 : 0.2
   }
 
