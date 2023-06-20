@@ -129,11 +129,24 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Website",
+            title: "Platform",
             items: [
               {
-                label: "Home",
+                label: "Why Agnost?",
                 to: "/",
+              },
+            ],
+          },
+          {
+            title: "Resources",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "Docs",
+                to: "/docs",
               },
             ],
           },
@@ -141,29 +154,16 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/agnostdev",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/agnostdev",
+                label: "GitHub",
+                href: "https://github.com/cloud-agnost",
               },
               {
                 label: "Twitter",
                 href: "https://twitter.com/AgnostDev",
               },
-            ],
-          },
-          {
-            title: "More",
-            items: [
               {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/cloud-agnost",
+                label: "Discord",
+                href: "https://discordapp.com/invite/agnostdev",
               },
             ],
           },
