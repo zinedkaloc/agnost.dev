@@ -117,7 +117,7 @@
 }
 
 .contact__form__submit__button {
-  height: 2.6rem;
+  height: 2.9rem;
   padding: 0 1rem;
   font: inherit;
   font-size: 1.25rem;
@@ -128,10 +128,10 @@
   cursor: pointer;
   padding: 0.75rem 2rem;
   width: fit-content;
-  height: 100%;
+
   align-self: flex-start;
   justify-self: flex-end;
-  border-radius: calc(var(--ifm-global-border-radius) / 2);
+  border-radius: 0.5rem;
   font-weight: var(--ifm-font-weight-bold);
   font-size: var(--font-size-xs);
 }

@@ -1,20 +1,35 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import clsx from "clsx"
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Layout from "@theme/Layout"
-import { motion, useAnimation } from "framer-motion"
+import { AnimatePresence, motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-
 import caCss from "../css/card.module.css"
 import seCss from "../css/section.module.css"
-
 import juCss from "../css/jumbotron.module.css"
 import feCss from "../css/feature.module.css"
-
 import Form from "../components/Form/Form"
 
 const Hero = () => {
+  /* const words = ["Kubernetes", "Javascript"]
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const [currentWord, setCurrentWord] = useState(words[currentWordIndex])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length)
+    }, 2000) // Adjust the duration between word changes (in milliseconds) as desired
+
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    setCurrentWord(words[currentWordIndex])
+  }, [currentWordIndex])
+
+  const controls = useInView({ triggerOnce: true }) */
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -31,9 +46,21 @@ const Hero = () => {
                 className={caCss["card__title--important"]}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
               >
-                Open-source Kubernetes Development Platform
+                Open-source{" "}
+                {/*  <AnimatePresence exitBeforeEnter>
+                  <motion.span
+                    key={currentWord.charCodeAt(0)}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    {currentWord}
+                  </motion.span>
+                </AnimatePresence>{" "} */}
+                Kubernetes Development Platform
               </motion.h1>
               <motion.p
                 className={caCss.card__content}
@@ -86,7 +113,6 @@ const Hero = () => {
     </motion.div>
   )
 }
-import BrowserOnly from "@docusaurus/BrowserOnly"
 
 const AllInOneBackend = () => {
   const controls = useAnimation()

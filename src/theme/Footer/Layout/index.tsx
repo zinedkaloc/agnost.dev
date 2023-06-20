@@ -63,15 +63,15 @@ const Footer = () => {
         >
           <img
             loading="lazy"
-            alt="Altogic logo"
+            alt="Agnost logo"
             className={footerStyles.footer__logo}
             height={30}
             src="/blog/img/logo_dark.svg"
-            title="Altogic | Build backend apps faster"
+            title="Agnost | Build backend apps faster"
           />
           <p className={footerStyles.footer__tagline}>
-            Altogic is a powerful <strong>backend as a service platform</strong>
-            , helping developers and businesses to design, deploy and manage
+            Agnost is a powerful <strong>backend as a service platform</strong>,
+            helping developers and businesses to design, deploy and manage
             scalable backend apps.
           </p>
           <div className="widget">
