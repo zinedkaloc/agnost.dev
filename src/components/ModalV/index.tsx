@@ -39,7 +39,7 @@ export default function Modal({
           <div className={styles.modal__content}>
             {content}
             <ImageSwitcher
-              lightImageSrc="/img/logo_light.svg?text=Light Logo"
+              lightImageSrc="/img/logo.svg?text=Light Logo"
               darkImageSrc="/img/logo_dark.svg?text=Dark Logo"
               className={styles.modal__logo}
               height={32}
