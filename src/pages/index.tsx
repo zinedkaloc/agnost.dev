@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import clsx from "clsx"
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Layout from "@theme/Layout"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 import caCss from "../css/card.module.css"
 import seCss from "../css/section.module.css"
@@ -87,11 +88,70 @@ const Hero = () => {
 }
 
 const AllInOneBackend = () => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: getThreshold(),
+  })
+
+  function getThreshold() {
+    return window.innerWidth < 768 ? 0.1 : 0.2
+  }
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    } else {
+      controls.start("hidden")
+    }
+  }, [controls, inView])
+
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }
+  const fadeInFromRightVariants = {
+    hidden: {
+      opacity: 0,
+      x: 40,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  }
+
+  const fadeInFromLeftVariants = {
+    hidden: {
+      opacity: 0,
+      x: -40,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
+  }
+
   return (
-    <section className={(clsx(seCss.section), seCss["section--odd"])}>
-      <div className={clsx(seCss["section--inner"], seCss["section--center"])}>
+    <section className={clsx(seCss.section, seCss["section--odd"])}>
+      <div
+        className={clsx(seCss["section--inner"], seCss["section--center"])}
+        ref={ref}
+      >
         <div className={juCss.jumbotron}>
-          <h1
+          <motion.h1
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInVariants}
             className={clsx(
               seCss.section__title,
               seCss["section__title--jumbotron"],
@@ -99,13 +159,14 @@ const AllInOneBackend = () => {
               "text--center",
             )}
           >
-            All-in-one Backend Development{" "}
-            {/* <em key="slogans-withEase" className={seCss.section__title__em}>
-              Development
-            </em>{" "} */}
-          </h1>
+            All-in-one Backend Development
+          </motion.h1>
 
-          <p
+          <motion.p
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInVariants}
             className={clsx(
               seCss.section__subtitle,
               seCss["section__subtitle--jumbotron"],
@@ -119,15 +180,22 @@ const AllInOneBackend = () => {
             Application server, database, authentication, queues, cache,
             cronjobs, realtime — it's all here. Agnost gives developers the
             technologies to build scalable & secure backend apps in minutes.
-          </p>
+          </motion.p>
         </div>
+
         <div
           className={clsx(
             seCss.section__footer,
             seCss["section__footer--feature-tabs"],
           )}
         >
-          <div className={feCss.topfeatures}>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromLeftVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -144,9 +212,15 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               MSSQL, Oracle, MongoDB, MySQL, or PostgreSQL.
             </p>
-          </div>
+          </motion.div>
 
-          <div className={feCss.topfeatures}>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromLeftVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -171,9 +245,15 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               Scalable and reliable storage options.
             </p>
-          </div>
+          </motion.div>
 
-          <div className={feCss.topfeatures}>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromRightVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -190,9 +270,15 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               Support for Redis speed data access.
             </p>
-          </div>
+          </motion.div>
 
-          <div className={feCss.topfeatures}>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromRightVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -209,8 +295,14 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               Support for RabbitMQ and Kafka.
             </p>
-          </div>
-          <div className={feCss.topfeatures}>
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromLeftVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -230,8 +322,14 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               Support for WebSockets and Server-Sent Events.
             </p>
-          </div>
-          <div className={feCss.topfeatures}>
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromLeftVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -248,8 +346,14 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               Authentication and authorization OOTB.
             </p>
-          </div>
-          <div className={feCss.topfeatures}>
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromRightVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -278,8 +382,14 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               Scheduled jobs that run at specific times or intervals.
             </p>
-          </div>
-          <div className={feCss.topfeatures}>
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInFromRightVariants}
+            className={feCss.topfeatures}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -296,9 +406,13 @@ const AllInOneBackend = () => {
             <p className={feCss.feature__content}>
               API keys, Rate limiters, Domain/IP white-listing.
             </p>
-          </div>
+          </motion.div>
         </div>
-        <p
+        <motion.p
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={fadeInFromLeftVariants}
           className={clsx(
             seCss.section__subtitle,
             seCss["section__subtitle--jumbotron"],
@@ -310,18 +424,51 @@ const AllInOneBackend = () => {
           Agnost also includes a low-code endpoint designer that allows you to
           create and deploy your APIs. You can create and manage your own custom
           express routes and middlewares.
-        </p>
+        </motion.p>
       </div>
     </section>
   )
 }
 
 const Realtime = () => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    } else {
+      controls.start("hidden")
+    }
+  }, [controls, inView])
+
+  const fadeInVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
     <section className={clsx(seCss.section)}>
       <div className={clsx(seCss["section--help"], seCss["section--center"])}>
         <div className={juCss.jumbotron}>
-          <h1
+          <motion.h1
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInVariants}
             className={clsx(
               seCss.section__title,
               caCss["card__title--important"],
@@ -331,9 +478,13 @@ const Realtime = () => {
             )}
           >
             Realtime Application Development
-          </h1>
+          </motion.h1>
 
-          <p
+          <motion.p
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={fadeInVariants}
             className={clsx(
               seCss.section__subtitle,
               seCss["section__subtitle--jumbotron"],
@@ -348,7 +499,7 @@ const Realtime = () => {
             application servers in seconds. Export your application in a
             standardized format and import it at any other Agnost Kubernetes
             cluster.
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
@@ -390,26 +541,42 @@ const CTA = () => {
 }
 
 const DevelopmentEnvironment = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3, // Adjust this threshold as needed
+  })
+
   return (
     <section className={(clsx(seCss.section), seCss["section--odd"])}>
-      <div className={clsx(seCss["section--inner"], seCss["section--center"])}>
-        <div className={juCss.jumbotron}>
-          <h1
+      <div
+        className={clsx(seCss["section--inner"], seCss["section--center"])}
+        ref={ref}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className={juCss.jumbotron}
+        >
+          <motion.h1
             className={clsx(
               seCss.section__title,
               seCss["section__title--jumbotron"],
               seCss["section__title--accent"],
               "text--center",
             )}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
           >
             Fully-customizable Development
             <br /> Environment in Minutes
             {/* <em key="slogans-withEase" className={seCss.section__title__em}>
               Development
             </em>{" "} */}
-          </h1>
+          </motion.h1>
 
-          <p
+          <motion.p
             className={clsx(
               seCss.section__subtitle,
               seCss["section__subtitle--jumbotron"],
@@ -417,11 +584,14 @@ const DevelopmentEnvironment = () => {
               "text--center",
             )}
             style={{ marginTop: "1rem" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             MySQL, PostgreSQL, MongoDB, and Redis databases. RabbitMQ and Kafka
             message queues. Cronjobs. Realtime. All in one place.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div
           className={clsx(
             seCss.section__footer,
@@ -432,12 +602,15 @@ const DevelopmentEnvironment = () => {
           <div
             className={clsx(feCss.topfeatures, feCss["topfeatures--center"])}
           >
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
               height="48"
               viewBox="0 0 256 153"
               className="h-12 w-12 fill-current"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <path
                 fill="currentColor"
@@ -447,20 +620,35 @@ const DevelopmentEnvironment = () => {
                 fill="#F90"
                 d="M230.993 120.964c-27.888 20.599-68.408 31.534-103.247 31.534c-48.827 0-92.821-18.056-126.05-48.064c-2.628-2.373-.255-5.594 2.881-3.73c35.942 20.854 80.276 33.484 126.136 33.484c30.94 0 64.932-6.442 96.212-19.666c4.662-2.12 8.646 3.052 4.068 6.442Zm11.614-13.224c-3.56-4.577-23.566-2.204-32.636-1.102c-2.713.34-3.137-2.034-.678-3.814c15.936-11.19 42.13-7.968 45.181-4.239c3.052 3.815-.848 30.008-15.767 42.554c-2.288 1.95-4.492.933-3.475-1.61c3.39-8.393 10.935-27.296 7.375-31.789Z"
               />
-            </svg>
-            <h4 className={feCss.help__header}>Amazon Web Services</h4>
-            <p className={feCss.feature__content}>
+            </motion.svg>
+            <motion.h4
+              className={feCss.help__header}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              Amazon Web Services
+            </motion.h4>
+            <motion.p
+              className={feCss.feature__content}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               Deploy your apps to AWS EKS
-            </p>
+            </motion.p>
           </div>
 
           <div className={feCss.topfeatures}>
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="44"
               viewBox="0 0 128 128"
               className="h-10 w-10 fill-current"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               <defs>
                 <linearGradient
@@ -519,20 +707,35 @@ const DevelopmentEnvironment = () => {
                 d="M98.055 4.408A6.476 6.476 0 0 0 91.917.002H46.575a6.478 6.478 0 0 1 6.137 4.406l39.35 116.594a6.476 6.476 0 0 1-6.137 8.55h45.344a6.48 6.48 0 0 0 6.136-8.55z"
                 transform="translate(.587 4.468) scale(.91904)"
               />
-            </svg>
-            <h4 className={feCss.help__header}>Microsoft Azure</h4>
-            <p className={feCss.feature__content}>
+            </motion.svg>
+            <motion.h4
+              className={feCss.help__header}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              Microsoft Azure
+            </motion.h4>
+            <motion.p
+              className={feCss.feature__content}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
               Deploy your apps to Azure AKS
-            </p>
+            </motion.p>
           </div>
 
           <div className={feCss.topfeatures}>
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
               viewBox="0 0 256 256"
               className="h-12 w-12 fill-current"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.8 }}
             >
               <g fill="none">
                 <rect width="256" height="256" />
@@ -553,29 +756,56 @@ const DevelopmentEnvironment = () => {
                   d="M84.149 95.989C52.953 96.175 27.815 121.615 28 152.81a56.486 56.486 0 0 0 22.049 44.438l25.193-25.193c-10.93-4.938-15.787-17.802-10.849-28.731c4.938-10.93 17.802-15.787 28.73-10.85a21.718 21.718 0 0 1 10.85 10.85l25.193-25.193a56.421 56.421 0 0 0-45.018-22.143Z"
                 />
               </g>
-            </svg>
-            <h4 className={feCss.help__header}>Google Cloud Platform</h4>
-            <p className={feCss.feature__content}>
+            </motion.svg>
+            <motion.h4
+              className={feCss.help__header}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              Google Cloud Platform
+            </motion.h4>
+            <motion.p
+              className={feCss.feature__content}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1 }}
+            >
               Deploy your apps to GCP GKE
-            </p>
+            </motion.p>
           </div>
           <div className={feCss.topfeatures}>
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
               viewBox="0 0 24 24"
               className="h-12 w-12 fill-current"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1.1 }}
             >
               <path
                 fill="currentColor"
                 d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"
               />
-            </svg>
-            <h4 className={feCss.help__header}>On-Premise</h4>
-            <p className={feCss.feature__content}>
+            </motion.svg>
+            <motion.h4
+              className={feCss.help__header}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            >
+              On-Premise
+            </motion.h4>
+            <motion.p
+              className={feCss.feature__content}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1.3 }}
+            >
               Deploy your apps to your own Kubernetes clusters
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>
