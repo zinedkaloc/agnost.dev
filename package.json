@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",
+    "@docusaurus/plugin-pwa": "^2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
     "@hookform/resolvers": "^2.8.8",
     "@mdx-js/react": "^1.6.22",

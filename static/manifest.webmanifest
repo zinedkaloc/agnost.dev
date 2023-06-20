@@ -16,6 +16,11 @@
       "src": "/img/icons/icon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
+    },
+    {
+      "src": "/img/icons/icon-64x64.png",
+      "sizes": "32x32",
+      "type": "image/png"
     }
   ]
 }

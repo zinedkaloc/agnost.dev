@@ -64,7 +64,7 @@
   font-weight: var(--ifm-font-weight-normal);
 }
 
-@media (max-width: 728px) {
+@media (max-width: 996px) {
   .contact--container {
     grid-template-columns: 1fr;
     width: 90%;
@@ -78,6 +78,7 @@
   }
   .contact--form .contact__form__form__block {
     grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
 

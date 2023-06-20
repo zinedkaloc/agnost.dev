@@ -16,7 +16,7 @@
 
 .card__relation {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   padding: 1rem;
   width: 100%;
   border-left: 3px solid #1976d2;
@@ -24,7 +24,7 @@
 
 .card__relationContent {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .card__title {
