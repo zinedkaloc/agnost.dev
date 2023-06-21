@@ -21,9 +21,15 @@ import Banner from "@site/src/components/Banner"
 import BrowserWindow from "@site/src/components/BrowserWindow"
 
 <head>
-  <title>
-    Deploying Applications with Kubernetes — Step-by-Step Guide for Beginners
-  </title>
+  <title>Deploying Applications with Kubernetes — Step-by-Step Guide</title>
+  <meta
+    property="og:title"
+    content="Deploying Applications with Kubernetes — Step-by-Step Guide"
+  />
+  <meta
+    name="twitter:title"
+    content="Deploying Applications with Kubernetes — Step-by-Step Guide"
+  />
 </head>
 
 Docker? Kubernetes? Minikube? Do these terms make you feel like you're drowning

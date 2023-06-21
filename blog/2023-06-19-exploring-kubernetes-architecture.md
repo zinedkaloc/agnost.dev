@@ -47,14 +47,14 @@ this revolution. So, what makes Kubernetes so special? Let's find out.
 In the technological Garden of Eden known as Google, Kubernetes was born
 in 2014. Does it seem like a mythical tale? The evolution of Kubernetes from
 Google's Borg system to the leading light of container orchestration is truly a
-technological saga. But how did it all begin? Let's find out. In 2003, Google
-was already using containers to manage its workloads. But the system was not as
-efficient as it could be. So, Google engineers Craig McLuckie and Joe Beda,
-along with Brendan Burns, set out to create a better system. They called it
-Borg, and it was the precursor to Kubernetes. Borg was a container orchestration
-system that managed Google's workloads. It was a closed-source system, and
-Google used it internally for years. But in 2014, Google decided to open-source
-Borg, and Kubernetes was born. The rest, as they say, is history.
+technological saga. But how did it all begin? In 2003, Google was already using
+containers to manage its workloads. But the system was not as efficient as it
+could be. So, Google engineers Craig McLuckie and Joe Beda, along with Brendan
+Burns, set out to create a better system. They called it Borg, and it was the
+precursor to Kubernetes. Borg was a container orchestration system that managed
+Google's workloads. It was a closed-source system, and Google used it internally
+for years. But in 2014, Google decided to open-source Borg, and Kubernetes was
+born. The rest, as they say, is history.
 
 ## What is Kubernetes?
 
@@ -67,11 +67,12 @@ containerized workloads and services with a seasoned hand.
 
 > Pods, Services, Deployments, and Namespaces
 
-In the Kubernetes universe, the Master and Nodes are the stars of the show. The
-Master acts as the brain, while the Nodes are the workhorses executing the
-tasks. The Master manages the cluster state, handles scheduling, and coordinates
-communication between Nodes, acting as the control plane. Meanwhile, Nodes run
-the applications and contain the runtime environment, known as the worker plane.
+In the Kubernetes universe, the Control Plane and Worker Nodes are the stars of
+the show. The Control Plane acts as the brain, while the Nodes are the
+workhorses executing the tasks. The Control Plane manages the cluster state,
+handles scheduling, and coordinates communication between Nodes, acting as the
+control plane. Meanwhile, Nodes run the applications and contain the runtime
+environment, known as the worker plane.
 
 ### Pods
 
@@ -240,7 +241,7 @@ hosting for the `my-app.com` domain.
 
 ## Decoding the Kubernetes Architecture
 
-> What makes Kubernetes tick? Master and Worker Nodes
+> What makes Kubernetes tick? Control plane and Worker Nodes
 
 The answer lies in the symbiosis between the **Master Node** (or Control Plane)
 and the **Worker Nodes**. Imagine the Master Node as the conductor, controlling
@@ -388,6 +389,7 @@ hands-on labs can lead you towards Kubernetes mastery.
 - [Kubernetes API Reference](https://kubernetes.io/docs/reference/)
 - [Kubernetes Tutorials](https://kubernetes.io/docs/tutorials/)
 - [Kubernetes Tasks](https://kubernetes.io/docs/tasks/)
+- [Kubernetes Training](https://kubernetes.io/training/)
 
 :::
 
