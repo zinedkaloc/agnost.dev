@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github")
-const darkCodeTheme = require("prism-react-renderer/themes/dracula")
+const darkCodeTheme = require("prism-react-renderer/themes/oceanicNext")
 const consts = require("./src/config/consts")
 const customFields = require("./src/config/customFields")
 const ssrTemplate = require("./src/internals/ssr.template")
@@ -174,6 +174,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ["yaml", "docker"],
+        defaultLanguage: "js",
+        plugins: ["line-numbers", "show-language"],
       },
     }),
 }
