@@ -2,7 +2,7 @@
 title: Exploring Kubernetes Architecture
 slug: exploring-kubernetes-architecture
 author: Deniz Colak
-author_title: Co-Founder @Altogic
+author_title: Co-Founder
 author_url: https://github.com/zinedkaloc
 author_image_url: https://github.com/zinedkaloc.png
 description:

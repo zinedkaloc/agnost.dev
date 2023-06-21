@@ -11,6 +11,7 @@ const config = {
   title: customFields.title,
   tagline: customFields.tagLine,
   favicon: "img/favicon.ico",
+  trailingSlash: false,
   // Set the production url of your site here
   url: customFields.productionUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
