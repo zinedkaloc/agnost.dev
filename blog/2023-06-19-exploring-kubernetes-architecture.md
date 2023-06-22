@@ -33,8 +33,6 @@ award-winning architecture?
 
 ## Introduction
 
-> The Kubernetes Phenomenon
-
 Welcome to the transformative world of Kubernetes, the titan of container
 orchestration. The architecture we now rely on for modern cloud-native
 applications is heavily influenced by Kubernetes, which is the cornerstone of
@@ -53,8 +51,14 @@ could be. So, Google engineers Craig McLuckie and Joe Beda, along with Brendan
 Burns, set out to create a better system. They called it Borg, and it was the
 precursor to Kubernetes. Borg was a container orchestration system that managed
 Google's workloads. It was a closed-source system, and Google used it internally
-for years. But in 2014, Google decided to open-source Borg, and Kubernetes was
-born. The rest, as they say, is history.
+for years.
+
+:::tip
+
+For more information on the history of Kubernetes, check out the video
+[Kubernetes: The Documentary](https://www.youtube.com/watch?v=BE77h7dmoQU).
+
+:::
 
 ## What is Kubernetes?
 
@@ -244,9 +248,9 @@ hosting for the `my-app.com` domain.
 > What makes Kubernetes tick? Control plane and Worker Nodes
 
 The answer lies in the symbiosis between the **Master Node** (or Control Plane)
-and the **Worker Nodes**. Imagine the Master Node as the conductor, controlling
-the rhythm and flow of the Kubernetes orchestra, while the Worker Nodes are the
-musicians, creating the symphony.
+and the **Worker Nodes**. Imagine the Control Plane as the conductor,
+controlling the rhythm and flow of the Kubernetes orchestra, while the Worker
+Nodes are the musicians, creating the symphony.
 
 :::tip
 
@@ -257,11 +261,11 @@ execute and manage the containers.
 
 :::
 
-### Master Node
+### Control Plane
 
 > The Maestro
 
-The Master Node, like a maestro conducting a symphony, directs the Kubernetes
+The Control Plane, like a maestro conducting a symphony, directs the Kubernetes
 show. It houses components like the kube-apiserver, kube-controller-manager,
 kube-scheduler, and etcd, all playing their part in the Kubernetes concert.
 
@@ -293,7 +297,7 @@ kube-scheduler, and etcd, all playing their part in the Kubernetes concert.
 
 Just as an orchestra can't function without musicians, Kubernetes can't operate
 without Worker Nodes. They ensure the rhythm continues, managing networking
-between containers, allocating resources, and liaising with the Master Node.
+between containers, allocating resources, and liaising with the Control Plane.
 
 Worker nodes host the pods and execute the containers. Each worker node consists
 of the following components:
@@ -304,7 +308,7 @@ of the following components:
   starting/stopping containers, and reporting node status.
 
 - **Container Runtime**: It is the underlying software responsible for running
-  containers, such as Docker or containerd. It provides the necessary isolation
+  containers, such as CRI-O or containerd. It provides the necessary isolation
   and resource management capabilities.
 
 - **Kube Proxy**: It facilitates network communication between pods and
@@ -371,8 +375,8 @@ and maintain uninterrupted gameplay experiences.
 - **Complexity**: The learning curve can be steep, requiring time and effort.
 - **Operational Overhead**: Managing and monitoring Kubernetes clusters can be
   challenging.
-- **Resource Consumption**: Kubernetes itself requires system resources, which
-  might not be ideal for small-scale deployments.
+- **Cost**: The cost of running Kubernetes clusters can be high. However, the
+  benefits outweigh the costs.
 
 ## The Path to Mastery
 
@@ -382,20 +386,18 @@ wisdom), and staying in tune with its fast-paced developments. Resources like
 the Kubernetes official documentation, cloud-native foundations courses, and
 hands-on labs can lead you towards Kubernetes mastery.
 
-:::tip
+:::tip Resources
 
-- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
-- [Kubernetes Concepts](https://kubernetes.io/docs/concepts/)
-- [Kubernetes API Reference](https://kubernetes.io/docs/reference/)
-- [Kubernetes Tutorials](https://kubernetes.io/docs/tutorials/)
-- [Kubernetes Tasks](https://kubernetes.io/docs/tasks/)
 - [Kubernetes Training](https://kubernetes.io/training/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+- [Kubernetes Tutorials](https://kubernetes.io/docs/tutorials/)
+- [Kubernetes Concepts](https://kubernetes.io/docs/concepts/)
+- [Kubernetes Tasks](https://kubernetes.io/docs/tasks/)
+- [Kubernetes API Reference](https://kubernetes.io/docs/reference/)
 
 :::
 
 ## Conclusion
-
-> The Future is Kubernetes
 
 So, what does the future hold? In the realm of cloud computing, the future is
 Kubernetes. As Kubernetes continues to evolve, it paves the way for a future
