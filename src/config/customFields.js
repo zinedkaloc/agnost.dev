@@ -17,7 +17,7 @@ module.exports = {
   oneLiner: "Altogic | Build backend apps faster. ",
   slackUrl: `https://slack.${consts.domain}`,
   stackoverflowUrl: "https://stackoverflow.com/questions/tagged/altogic",
-  twitterUrl: "https://twitter.com/altogic",
+  twitterUrl: "https://twitter.com/agnostdev",
   videosUrl: "https://youtu.be/bMfF9Yeg2lI",
   apiRef: "https://clientapi.altogic.com/v1.3.0/modules.html",
   discordUrl: "https://discord.gg/ERK2ssumh8",

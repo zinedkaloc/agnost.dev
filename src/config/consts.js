@@ -1,6 +1,6 @@
 module.exports = {
-  githubOrgUrl: "https://www.altogic.com/docs/full-code-functions",
-  repoUrl: "https://github.com/altogic/",
-  cloudFunctionsUrl: "https://github.com/altogic/",
-  domain: "www.altogic.com",
+  githubOrgUrl: "https://www.agnost.dev",
+  repoUrl: "https://github.com/cloud-agnost",
+  cloudFunctionsUrl: "https://github.com/cloud-agnost",
+  domain: "www.agnost.dev",
 }
