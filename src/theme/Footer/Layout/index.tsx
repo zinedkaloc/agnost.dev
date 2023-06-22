@@ -79,7 +79,7 @@ const Footer = () => {
             <ul className={footerStyles.footer__socials}>
               {/* <li>
                 <a
-                  href="https://www.instagram.com/altogic"
+                  href="https://www.instagram.com/agnost"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -88,7 +88,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://twitter.com/altogic"
+                  href="https://twitter.com/agnost"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -97,7 +97,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.facebook.com/altogic"
+                  href="https://www.facebook.com/agnost"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -106,7 +106,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/company/altogic"
+                  href="https://www.linkedin.com/company/agnost"
                   target="_blank"
                   rel="noreferrer"
                 >

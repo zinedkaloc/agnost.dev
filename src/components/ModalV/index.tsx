@@ -43,7 +43,7 @@ export default function Modal({
               darkImageSrc="/img/logo_dark.svg?text=Dark Logo"
               className={styles.modal__logo}
               height={32}
-              alt="Altogic Logo"
+              alt="Agnost Logo"
             />
           </div>
         </div>

@@ -33,7 +33,7 @@ const FooterLink = ({ to, href, label, when, release, ...props }: Props) => {
               target: "_blank",
             }
           : {
-              href: `https://clientapi.altogic.com/v${release?.toString()}/modules.html`,
+              href: `https://clientapi.agnost.com/v${release?.toString()}/modules.html`,
             }
         : { href: linkTo })}
       {...props}
@@ -44,7 +44,7 @@ const FooterLink = ({ to, href, label, when, release, ...props }: Props) => {
 }
 
 const fetchLatestRelease = async () => {
-  const response = await nodeFetch(`https://registry.npmjs.org/altogic/latest`)
+  const response = await nodeFetch(`https://registry.npmjs.org/agnost/latest`)
   const data = await response.json()
   return data.version
 }
@@ -89,12 +89,12 @@ const Footer = () => {
           )}
         >
           <img
-            alt="Altogic Footer logo"
+            alt="Agnost Footer logo"
             className={footerStyles.footer__logo}
             height={30}
             width={120}
             src="/img/logo_dark.svg"
-            title="Altogic | Build backend apps faster"
+            title="Agnost | Open-source Kubernetes Development Platform"
           />
           <p className={footerStyles.footer__tagline}>
             Agnost is an <strong>open-source kubernetes </strong>
