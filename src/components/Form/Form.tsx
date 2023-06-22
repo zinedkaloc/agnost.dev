@@ -45,13 +45,16 @@ const Form = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     // eslint-disable-next-line no-console
     setModal(true)
-    const response = await fetch("https://api.altogic.com/contact/", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://c4-na.altogic.com/e:6474a0b6b19ad9247245c34d/lead",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    })
+    )
     // eslint-disable-next-line no-console
     console.log(
       "Hello developer, we sent your message here to log for you",
