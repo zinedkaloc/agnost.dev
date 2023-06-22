@@ -77,9 +77,7 @@ export default function BlogTagsPostsPage({
         }}
       >
         <header className="margin-bottom--xl">
-          <section
-            className={clsx(seCss["section--inner"], seCss["section--blog"])}
-          >
+          <section className={clsx(seCss["section--blog"])}>
             <div className={seCss.jumbotron}>
               <h1
                 className={clsx(

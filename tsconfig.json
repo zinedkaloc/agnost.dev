@@ -35,7 +35,7 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@theme/useMetadataContext": ["src/theme/useMetadataContext"],
       "@theme/useResizeObserver": ["src/theme/useResizeObserver"],
