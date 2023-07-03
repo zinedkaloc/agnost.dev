@@ -145,10 +145,6 @@ const config = {
                 label: "Blog",
                 to: "/blog",
               },
-              {
-                label: "Docs",
-                to: "/docs",
-              },
             ],
           },
           {
