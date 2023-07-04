@@ -164,6 +164,7 @@
 .contact__form__submit__button:hover {
   background: var(--palette-pink);
   background-color: var(--theme-button-primary-hover-background-color);
+  color: white;
 }
 /*
 input[type="text"] {
